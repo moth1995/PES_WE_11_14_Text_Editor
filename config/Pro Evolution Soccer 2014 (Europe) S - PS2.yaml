@@ -1,0 +1,35 @@
+Gui:
+    Game Name: "Pro Evolution Soccer 2014 - PS2 - SLES_556.76 - database_s"
+
+Game Data:
+    Total Stadiums: 17
+    Stadium Name Lenght : 61
+    Total Leagues: 16
+    Total Teams: 326
+    Total Nationalities: 143
+    Total Balls: 25
+    Base Address: 0xff000
+
+SLXX Offsets:
+    Balls Offsets Table: 0x325f40
+    Balls Text Data Offset: 0x325d90
+    Balls Text Data Size: 0x1b0
+
+DATABASE_X Offsets:
+    Teams Offsets Table: 0x3470
+    Teams Text Data Offset: 0x1238
+    Teams Text Data Size: 0x2108
+
+    Nationalities Offsets Table: 0xdc0
+    Nationalities Text Data Offset: 0x100
+    Nationalities Text Data Size: 0xcc0
+
+DEFAULT_DATASET Offsets:
+    Stadiums Offsets Table 1: 0x95b20
+    Stadiums Offsets Table 2: 0x95f80
+    Leagues Offsets Table 1: 0x96430
+    Leagues Offsets Table 2: 0x96430
+
+Callnames:
+    Name Lenght: 0x30
+    Encoding: "utf8"
