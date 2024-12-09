@@ -174,6 +174,7 @@ class Controller():
         self.view.stadiums_tab.stadiums_list_box.delete(0, "end")
         self.view.leagues_tab.league_list_box.delete(0, "end")
         self.view.callnames_tab.callnames_list_box.delete(0, "end")
+        self.view.balls_tab.balls_list_box.delete(0, "end")
         self.view.file_menu.entryconfig(FILE_MENU_SAVE_EXECUTABLE_TEXT, state='disabled')
         self.view.file_menu.entryconfig(FILE_MENU_SAVE_DATABASE_X_TEXT, state='disabled')
         self.view.file_menu.entryconfig(FILE_MENU_SAVE_DEFAULT_DATASET_TEXT, state='disabled')
