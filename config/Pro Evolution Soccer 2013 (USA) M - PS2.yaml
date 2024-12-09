@@ -1,0 +1,35 @@
+Gui:
+    Game Name: "Pro Evolution Soccer 2013 - PS2 - SLUS_219.55 - database_m"
+
+Game Data:
+    Total Stadiums: 21
+    Stadium Name Lenght : 61
+    Total Leagues: 16
+    Total Teams: 326
+    Total Nationalities: 144
+    Total Balls: 23
+    Base Address: 0xff000
+
+SLXX Offsets:
+    Balls Offsets Table: 0x3258e0
+    Balls Text Data Offset: 0x325700
+    Balls Text Data Size: 0x1e0
+
+DATABASE_X Offsets:
+    Teams Offsets Table: 0x3480
+    Teams Text Data Offset: 0x1250
+    Teams Text Data Size: 0x20e8
+
+    Nationalities Offsets Table: 0xdd0
+    Nationalities Text Data Offset: 0x100
+    Nationalities Text Data Size: 0xcd0
+
+DEFAULT_DATASET Offsets:
+    Stadiums Offsets Table 1: 0x97d90
+    Stadiums Offsets Table 2: 0x982f0
+    Leagues Offsets Table 1: 0x988a0
+    Leagues Offsets Table 2: 0x988a0
+
+Callnames:
+    Name Lenght: 0x30
+    Encoding: "utf8"
