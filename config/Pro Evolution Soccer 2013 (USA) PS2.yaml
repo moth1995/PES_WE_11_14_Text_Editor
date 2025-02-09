@@ -1,5 +1,5 @@
 Gui:
-    Game Name: "Pro Evolution Soccer 2013 - PS2 - SLUS_219.55 - database_m"
+    Game Name: "Pro Evolution Soccer 2013 - PS2 - SLUS_219.55"
 
 Game Data:
     Total Stadiums: 21
@@ -15,14 +15,15 @@ SLXX Offsets:
     Balls Text Data Offset: 0x325700
     Balls Text Data Size: 0x1e0
 
-DATABASE_X Offsets:
-    Teams Offsets Table: 0x3480
-    Teams Text Data Offset: 0x1250
-    Teams Text Data Size: 0x20e8
+DATABASE_OVL Offsets:
+    "database_m.ovl":
+        Teams Offsets Table: 0x3480
+        Teams Text Data Offset: 0x1250
+        Teams Text Data Size: 0x20e8
 
-    Nationalities Offsets Table: 0xdd0
-    Nationalities Text Data Offset: 0x100
-    Nationalities Text Data Size: 0xcd0
+        Nationalities Offsets Table: 0xdd0
+        Nationalities Text Data Offset: 0x100
+        Nationalities Text Data Size: 0xcd0
 
 DEFAULT_DATASET Offsets:
     Stadiums Offsets Table 1: 0x97d90

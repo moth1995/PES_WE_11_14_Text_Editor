@@ -1,5 +1,5 @@
 Gui:
-    Game Name: "Pro Evolution Soccer 2014 - PSP - ULES01598 - database_s"
+    Game Name: "Pro Evolution Soccer 2014 - PSP - ULES01598"
 
 Game Data:
     Total Stadiums: 17
@@ -15,14 +15,15 @@ SLXX Offsets:
     Balls Text Data Offset: 0x2a2348
     Balls Text Data Size: 0x158
 
-DATABASE_X Offsets:
-    Teams Offsets Table: 0x3288
-    Teams Text Data Offset: 0x1180
-    Teams Text Data Size: 0x1fe0
+DATABASE_OVL Offsets:
+    "database_s.ovl":
+        Teams Offsets Table: 0x3288
+        Teams Text Data Offset: 0x1180
+        Teams Text Data Size: 0x1fe0
 
-    Nationalities Offsets Table: 0xd08
-    Nationalities Text Data Offset: 0x80
-    Nationalities Text Data Size: 0xc88
+        Nationalities Offsets Table: 0xd08
+        Nationalities Text Data Offset: 0x80
+        Nationalities Text Data Size: 0xc88
 
 DEFAULT_DATASET Offsets:
     Stadiums Offsets Table 1: 0x961a0
