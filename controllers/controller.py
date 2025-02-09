@@ -143,6 +143,7 @@ class Controller():
 
         # Balls offsets
         self.balls_offsets_table = self.my_config.file["SLXX Offsets"]["Balls Offsets Table"]
+        self.balls_offset_size = self.my_config.file["SLXX Offsets"]["Balls Offsets Size"]
         self.balls_data_offset = self.my_config.file["SLXX Offsets"]["Balls Text Data Offset"]
         self.balls_text_size = self.my_config.file["SLXX Offsets"]["Balls Text Data Size"]
 
@@ -203,7 +204,8 @@ class Controller():
             self.executable.file_bytes, 
             self.balls_offsets_table, 
             self.total_balls, 
-            self.executable_base_address
+            self.executable_base_address,
+            self.balls_offset_size,
         )
         
         self.view.balls_tab.balls_list_box.delete(0, "end")

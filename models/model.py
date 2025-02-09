@@ -100,10 +100,10 @@ class Model():
             for callname in range(total_callnames)
         ]
 
-    def get_balls_names(self, file_bytes:bytes, offsets_table:int, total_balls:int, base_address:int):
+    def get_balls_names(self, file_bytes:bytes, offsets_table:int, total_balls:int, base_address:int, offset_size:int):
         return [
             file_bytes[
-                self.get_name_offset(file_bytes, offsets_table + ball_id * 0x0c) - base_address
+                self.get_name_offset(file_bytes, offsets_table + ball_id * offset_size) - base_address
                 :
             ].partition(b"\0")[0].decode('utf-8')
             for ball_id in range(total_balls)
