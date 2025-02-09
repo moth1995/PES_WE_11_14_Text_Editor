@@ -12,6 +12,7 @@ Game Data:
 
 SLXX Offsets:
     Balls Offsets Table: 0x325f40
+    Balls Offsets Size: 0x0c
     Balls Text Data Offset: 0x325d90
     Balls Text Data Size: 0x1b0
 
