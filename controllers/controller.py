@@ -146,16 +146,6 @@ class Controller():
         self.balls_data_offset = self.my_config.file["SLXX Offsets"]["Balls Text Data Offset"]
         self.balls_text_size = self.my_config.file["SLXX Offsets"]["Balls Text Data Size"]
 
-        # DATABASE_X offsets
-
-        self.names_offsets_table = self.my_config.file["DATABASE_X Offsets"]["Teams Offsets Table"]
-        self.teams_names_data_offset = self.my_config.file["DATABASE_X Offsets"]["Teams Text Data Offset"]
-        self.teams_names_text_size = self.my_config.file["DATABASE_X Offsets"]["Teams Text Data Size"]
-
-        self.nationalities_offsets_table = self.my_config.file["DATABASE_X Offsets"]["Nationalities Offsets Table"]
-        self.nationalities_data_offset = self.my_config.file["DATABASE_X Offsets"]["Nationalities Text Data Offset"]
-        self.nationalities_text_size = self.my_config.file["DATABASE_X Offsets"]["Nationalities Text Data Size"]
-
         # DEFAULT_DATASET offsets
         self.stadiums_offsets_table = self.my_config.file["DEFAULT_DATASET Offsets"]["Stadiums Offsets Table 1"]
         self.stadiums_offsets_table2 = self.my_config.file["DEFAULT_DATASET Offsets"]["Stadiums Offsets Table 2"]
@@ -167,6 +157,22 @@ class Controller():
         self.callname_encoding = self.my_config.file["Callnames"]["Encoding"]
 
         self.clear_view()
+
+    def __set_database_x_config(self, ovl_name:str):
+
+        if ovl_name not in self.my_config.file["DATABASE_OVL Offsets"]:
+            raise Exception("There's no configuration for the ovl %s" % ovl_name)
+
+        # DATABASE_X offsets
+
+        self.names_offsets_table = self.my_config.file["DATABASE_OVL Offsets"][ovl_name]["Teams Offsets Table"]
+        self.teams_names_data_offset = self.my_config.file["DATABASE_OVL Offsets"][ovl_name]["Teams Text Data Offset"]
+        self.teams_names_text_size = self.my_config.file["DATABASE_OVL Offsets"][ovl_name]["Teams Text Data Size"]
+
+        self.nationalities_offsets_table = self.my_config.file["DATABASE_OVL Offsets"][ovl_name]["Nationalities Offsets Table"]
+        self.nationalities_data_offset = self.my_config.file["DATABASE_OVL Offsets"][ovl_name]["Nationalities Text Data Offset"]
+        self.nationalities_text_size = self.my_config.file["DATABASE_OVL Offsets"][ovl_name]["Nationalities Text Data Size"]
+
 
     def clear_view(self):
         self.view.teamnames_tab.teamnames_list_box.delete(0, "end")
@@ -204,10 +210,29 @@ class Controller():
         self.view.balls_tab.balls_list_box.insert("end", *self.balls_list)
         self.view.file_menu.entryconfig(FILE_MENU_SAVE_EXECUTABLE_TEXT, state='normal')
 
+    def __get_database_x_name(self):
+        
+        if not self.database_x.size:
+            raise Exception("Empty or invalid database_x.ovl file!")
+        
+        return self.database_x.file_bytes[0x20: 0x40].partition(b"\0")[0].decode("utf8")
+
     def on_open_detabase_x_menu_click(self):
         file_path = self.model.open_file()
         if not file_path: return
         self.database_x.filename = file_path
+
+        try:
+            database_x_name = self.__get_database_x_name()
+        except Exception as ex:
+            messagebox.showerror(title=self.view.appname, message=f"{ex}")
+            return
+        
+        try:
+            self.__set_database_x_config(database_x_name)
+        except Exception as ex:
+            messagebox.showerror(title=self.view.appname, message=f"{ex}")
+            return
 
         if not (
             self.database_x.size and
