@@ -1,7 +1,7 @@
 @echo on
 set PY_FILE=text_editor.py
 set PROJECT_NAME=PES WE 2011 2014 Text Editor
-set VERSION=1.0.0
+set VERSION=1.1.0
 set FILE_VERSION=file_version_info.txt
 set EXTRA_ARG=--add-data=resources/*;resources/ 
 set ICO_DIR=resources/pes_indie.ico
