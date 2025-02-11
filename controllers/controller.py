@@ -122,9 +122,8 @@ class Controller():
             'Last Config File Used' : self.my_config.file_location,
         }
 
-        settings_file = open(settings_file_name, "w")
-        yaml.dump(dict_file, settings_file)
-        settings_file.close()
+        with open(settings_file_name, "w") as settings_file:
+            yaml.dump(dict_file, settings_file)
         self.view.destroy()
 
 
